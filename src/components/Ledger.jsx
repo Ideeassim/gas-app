@@ -119,14 +119,14 @@ function deleteItem(invoice) {
   let url;
 
   if (account === "Domid I") {
-    url= `http://localhost:5000/api/domidInvoices/${_id}`;
+    url= `/api/domidInvoices/${_id}`;
   }else if (account === "Domid II"){
-   url= `http://localhost:5000/api/domid2Invoices/${_id}`;
+   url= `/api/domid2Invoices/${_id}`;
   }else if (account === "Cylinder Gas"){
-    url = `https://gas-sales-app.onrender.com/api/cylinderInvoices/${_id}`;
+    url = `/api/cylinderInvoices/${_id}`;
   } 
   else{
-  url=    `https://gas-sales-app.onrender.com/api/invoices/${_id}`;
+  url=    `/api/invoices/${_id}`;
   }
 
   axios.delete(url)
@@ -139,17 +139,14 @@ function deleteItem(invoice) {
 
     function deleteExp(id) {
      axios
-    .delete(`https://gas-sales-app.onrender.com/api/expenses/${id}`)
+    .delete(`/api/expenses/${id}`)
     .then(() => {
       // Remove the deleted expense from state immediately
       setExpenseToLedger(prev => prev.filter(exp => exp._id !== id));
     })
     .catch((err) => console.error('Error deleting expense:', err));
     }
-    //  //calculate net profit
-    //  const expTotal =  expenseToLedger.reduce((sum, item) => sum + Number(item.Amount), 0);
-    //  const netProfit =ledgerTotal - expTotal;
-
+    
       if (loading) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center" height={200} flexDirection="column">
