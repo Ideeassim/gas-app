@@ -129,7 +129,7 @@ function deleteItem(invoice) {
   url=    `/api/invoices/${_id}`;
   }
 
-  axios.delete(url)
+  api.delete(url)
     .then(() => {
       setLedgerData(prev => prev.filter(inv => inv._id !== _id));
     })
@@ -138,7 +138,7 @@ function deleteItem(invoice) {
 
 
     function deleteExp(id) {
-     axios
+     api
     .delete(`/api/expenses/${id}`)
     .then(() => {
       // Remove the deleted expense from state immediately
