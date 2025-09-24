@@ -32,11 +32,11 @@ const changeAccount= (event) =>{
   const fetchLedgerData = () => {
      setLoading(true);
      Promise.all([
-   api.get('https://gas-sales-app.onrender.com/api/invoices'),
-   api.get('https://gas-sales-app.onrender.com/api/expenses'),
-   api.get("https://gas-sales-app.onrender.com/api/domidInvoices"),
-   api.get("https://gas-sales-app.onrender.com/api/domid2Invoices"),
-   api.get('https://gas-sales-app.onrender.com/api/cylinderInvoices')
+   api.get('/api/invoices'),
+   api.get('/api/expenses'),
+   api.get("/api/domidInvoices"),
+   api.get("/api/domid2Invoices"),
+   api.get('/api/cylinderInvoices')
 
   ])
     .then(([invoicesRes, expensesRes, domidRes, domid2Res, cylRes]) => {
