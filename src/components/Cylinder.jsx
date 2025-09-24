@@ -69,7 +69,7 @@ setCylData(updated);
  
     }
     //send to backend
-    api.post('https://gas-sales-app.onrender.com/api/cylinderInvoices', updated)
+    api.post('/api/cylinderInvoices', updated)
     .then(res => {
          setOpen(true);
         setError(false)
